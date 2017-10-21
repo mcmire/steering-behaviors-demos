@@ -1,6 +1,6 @@
-import PIXI from 'pixi.js';
-import RendererStore from '../stores/RendererStore';
-import AnimationStore from '../stores/AnimationStore';
+import PIXI from "pixi.js";
+import RendererStore from "../stores/RendererStore";
+import AnimationStore from "../stores/AnimationStore";
 
 let renderables = new Set();
 
@@ -13,19 +13,17 @@ let renderables = new Set();
  * @extends WebGLRenderer
  */
 export default class Renderer extends PIXI.WebGLRenderer {
-
   constructor(...args) {
-
     super(...args);
 
     //this.resolution = window.devicePixelRatio;
 
-    window.addEventListener('resize', this.resizeHandler.bind(this));
+    window.addEventListener("resize", this.resizeHandler.bind(this));
 
-    RendererStore.set('resolution', this.resolution);
-    RendererStore.set('stageWidth', args[0]);
-    RendererStore.set('stageHeight', args[1]);
-    RendererStore.set('stageCenter', new PIXI.Point(args[0] / 2, args[1] / 2));
+    RendererStore.set("resolution", this.resolution);
+    RendererStore.set("stageWidth", args[0]);
+    RendererStore.set("stageHeight", args[1]);
+    RendererStore.set("stageCenter", new PIXI.Point(args[0] / 2, args[1] / 2));
 
     this.setStore();
 
@@ -36,8 +34,8 @@ export default class Renderer extends PIXI.WebGLRenderer {
    * Set the stores width and height on resize
    */
   setStore() {
-    RendererStore.set('width', this.getWindowSize()[0]);
-    RendererStore.set('height', this.getWindowSize()[1]);
+    RendererStore.set("width", this.getWindowSize()[0]);
+    RendererStore.set("height", this.getWindowSize()[1]);
   }
 
   /**
@@ -85,7 +83,7 @@ export default class Renderer extends PIXI.WebGLRenderer {
   animate() {
     this.renderRenderables();
 
-    if(this.active) {
+    if (this.active) {
       window.requestAnimationFrame(this.animate.bind(this));
       AnimationStore.emitChange();
     }
@@ -108,7 +106,7 @@ export default class Renderer extends PIXI.WebGLRenderer {
   removeRenderable(renderable) {
     let hasRenderable = renderables.has(renderable);
 
-    if(hasRenderable) {
+    if (hasRenderable) {
       renderables.delete(renderable);
     }
 
@@ -124,5 +122,4 @@ export default class Renderer extends PIXI.WebGLRenderer {
       this.render(entry);
     }
   }
-
 }

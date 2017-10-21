@@ -1,19 +1,18 @@
-import EventEmitter from 'events';
-import { RESIZE } from '../constants/AppConstants';
+import EventEmitter from "events";
+import { RESIZE } from "../constants/AppConstants";
 
 /**
  * Render Store
  * Keeps render variables
  *
  * @data
- * 	width : window width
- * 	height : window height
- * 	stage : stage width and height
- * 	stageCenter : center point of stage
- * 	resolution : display density
+ *   width : window width
+ *   height : window height
+ *   stage : stage width and height
+ *   stageCenter : center point of stage
+ *   resolution : display density
  */
 class RendererStore extends EventEmitter {
-
   constructor(...args) {
     super(...args);
 
@@ -22,7 +21,7 @@ class RendererStore extends EventEmitter {
       height: 0,
       stageWidth: 0,
       stageHeight: 0,
-      stageCenter: {x: 0,y: 0},
+      stageCenter: { x: 0, y: 0 },
       resolution: 1
     };
   }
@@ -32,7 +31,7 @@ class RendererStore extends EventEmitter {
   }
 
   set(key, value) {
-    return this.data[key] = value;
+    return (this.data[key] = value);
   }
 
   emitChange() {

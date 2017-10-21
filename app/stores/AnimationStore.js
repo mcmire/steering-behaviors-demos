@@ -1,5 +1,5 @@
-import EventEmitter from 'events';
-import { ANIMATE } from '../constants/AppConstants';
+import EventEmitter from "events";
+import { ANIMATE } from "../constants/AppConstants";
 
 /**
  * Animation Store
@@ -8,12 +8,11 @@ import { ANIMATE } from '../constants/AppConstants';
  * for things such as Tween.js
  *
  * @data
- * 	tick : number of times render has been called
- * 	startTime : float ms of animation time start
- * 	currentTime : current float ms
+ *   tick : number of times render has been called
+ *   startTime : float ms of animation time start
+ *   currentTime : current float ms
  */
 class AnimationStore extends EventEmitter {
-
   constructor(...args) {
     super(...args);
 
@@ -34,7 +33,7 @@ class AnimationStore extends EventEmitter {
   }
 
   set(key, value) {
-    return this.data[key] = value;
+    return (this.data[key] = value);
   }
 
   emitChange() {

@@ -1,8 +1,8 @@
-import ScaledContainer from '../ScaledContainer/ScaledContainer.js';
-import BunnyGroup from '../BunnyGroup/BunnyGroup.js';
-import Bunny from '../Bunny/Bunny.js';
-import Background from '../Background/Background.js';
-import RendererStore from '../../stores/RendererStore.js';
+import ScaledContainer from "../ScaledContainer/ScaledContainer.js";
+import BunnyGroup from "../BunnyGroup/BunnyGroup.js";
+import Bunny from "../Bunny/Bunny.js";
+import Background from "../Background/Background.js";
+import RendererStore from "../../stores/RendererStore.js";
 /**
  * Main App Display Object
  *
@@ -12,7 +12,6 @@ import RendererStore from '../../stores/RendererStore.js';
  * @extends ScaledContainer
  */
 export default class App extends ScaledContainer {
-
   constructor(...args) {
     var bg = new Background();
 
@@ -21,12 +20,11 @@ export default class App extends ScaledContainer {
     this.addChild(bg);
 
     this.addBunnies();
-
   }
 
   addBunnies() {
-    const cx = RendererStore.get('stageCenter').x;
-    const cy = RendererStore.get('stageCenter').y;
+    const cx = RendererStore.get("stageCenter").x;
+    const cy = RendererStore.get("stageCenter").y;
 
     let group1 = new BunnyGroup();
     let b1 = new Bunny();
@@ -35,10 +33,9 @@ export default class App extends ScaledContainer {
     b1.position.y = cy;
 
     group1.position.x = cx;
-    group1.position.y = cy + (RendererStore.get('stageHeight')*.25);
+    group1.position.y = cy + RendererStore.get("stageHeight") * 0.25;
 
     this.addChild(b1);
     this.addChild(group1);
   }
-
 }
