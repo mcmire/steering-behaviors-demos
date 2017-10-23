@@ -1,9 +1,9 @@
 {
-  "name": "steering-behaviors-playground",
+  "name": "steering-behaviors-demos",
   "version": "0.0.1",
   "private": true,
-  "repository": "https://github.com/mcmire/steering-behaviors-playground",
-  "description": "A showcase of steering behaviors",
+  "repository": "https://github.com/mcmire/steering-behaviors-demos",
+  "description": "Demos of well-known steering behaviors pioneered by Craig Reynolds",
   "config": {
     "buildDir": "./build",
     "stageWidth": 1920,
