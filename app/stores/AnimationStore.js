@@ -1,5 +1,5 @@
 import EventEmitter from "events";
-import { ANIMATE } from "../constants/AppConstants";
+import { ANIMATE } from "../constants";
 
 /**
  * Animation Store

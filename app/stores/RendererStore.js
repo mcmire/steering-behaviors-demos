@@ -1,5 +1,5 @@
 import EventEmitter from "events";
-import { RESIZE } from "../constants/AppConstants";
+import { RESIZE } from "../constants";
 
 /**
  * Render Store

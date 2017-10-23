@@ -1,6 +1,6 @@
-import PIXI from "pixi.js";
-import RendererStore from "../../stores/RendererStore.js";
-import { RESIZE } from "../../constants/AppConstants.js";
+import { Container } from "pixi.js";
+import RendererStore from "../stores/RendererStore.js";
+import { RESIZE } from "../constants.js";
 
 // default target size
 let tw = 1920;
@@ -15,7 +15,7 @@ let th = 1080;
  * @extends Container
  * @exports ScaledContainer
  */
-export default class ScaledContainer extends PIXI.Container {
+export default class ScaledContainer extends Container {
   /**
    * Set target size
    * @param  {Number} target_w width
@@ -54,6 +54,7 @@ export default class ScaledContainer extends PIXI.Container {
       offsetY = rh / 2 - th * scaleRatio / 2;
     }
 
+    console.log("offsetX", offsetX, "offsetY", offsetY, "scale", scale);
     this.position.x = offsetX;
     this.position.y = offsetY;
     this.scale = scale;

@@ -1,0 +1,4 @@
+const RESIZE = "APP_RESIZE";
+const ANIMATE = "APP_ANIMATE";
+
+export { RESIZE, ANIMATE };
