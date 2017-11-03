@@ -3,12 +3,15 @@
 This project contains a collection of demos, runnable in any browser, that
 showcase *steering behaviors*, a series of techniques that can be used to
 simulate lifelike movement of autonomous objects in games, visualizations, and
-the like. These techniques are modeled after the way that people or animals
-navigate, especially around each other, and were pioneered by [Craig
-Reynolds][craig-reynolds], who detailed them in a [paper][reynolds-99].
+the like. These techniques -- pioneered by [Craig Reynolds][craig-reynolds] and
+described in a brief [paper][reynolds-99] he wrote -- are modeled after the way
+that people or animals navigate, especially around each other.
+
+[Check them out!][demos]
 
 [reynolds-99]: http://www.red3d.com/cwr/papers/1999/gdc99steer.pdf
 [craig-reynolds]: http://www.red3d.com/cwr/
+[demos]: https://mcmire.github.io/steering-behaviors-demos/
 
 ## Rationale
 
@@ -23,13 +26,13 @@ on the internet. However, the code -- and the explanations around them -- are
 pretty outdated, having been written in an age where Java and C++ were
 prevalent. These days, browsers can do a lot of things thanks to JavaScript.
 
-I wanted to learn the magic behind these behaviors and to bring them to life in
-a way that anyone could access them.
+With this in mind, I wanted to learn the magic behind these behaviors and to
+bring them to life in a way that anyone could access them.
 
 ## Overview
 
 While this project is a work in progress at the moment, the hope is that the
-techniques on display here will eventually include:
+techniques on display here will eventually include the following behaviors:
 
 * Seeking
 * Fleeing
@@ -57,7 +60,7 @@ techniques on display here will eventually include:
 
 ## Architecture
 
-* The visual engine layer is provided by [Pixi.js][pixi].
+* The graphics layer is powered by [Pixi.js][pixi].
 * Code is written in TypeScript, compiled by Webpack.
 
 [pixi]: http://www.pixijs.com/
@@ -70,8 +73,8 @@ techniques on display here will eventually include:
 
 ## Deployment
 
-* Run `npm run build` to generate a build of the app in `build/`.
-* Run `bin/deploy` to publish the app to GitHub Pages.
+* Run `npm run build` to generate a build of the app in `docs/`.
+* Push to GitHub!
 
 ## Authorship/License
 
