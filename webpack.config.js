@@ -7,7 +7,7 @@ const webpack = require("webpack");
 
 const pkg = require("./package.json");
 
-const BUILD_DIR = "build";
+const BUILD_DIR = pkg.config.buildDir;
 const DEV = process.env.NODE_ENV !== "production";
 const OUTPUT_PATH = path.resolve(BUILD_DIR);
 
@@ -42,6 +42,11 @@ module.exports = {
         test: /\.ts$/,
         exclude: /node_modules/,
         use: "ts-loader"
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: "babel-loader"
       },
       {
         test: /\.scss$/,
