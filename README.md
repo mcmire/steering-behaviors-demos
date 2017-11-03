@@ -4,8 +4,8 @@ This project contains a collection of demos, runnable in any browser, that
 showcase *steering behaviors*, a series of techniques that can be used to
 simulate lifelike movement of autonomous objects in games, visualizations, and
 the like. These techniques -- pioneered by [Craig Reynolds][craig-reynolds] and
-described in a brief [paper][reynolds-99] he wrote -- are modeled after the way
-that people or animals navigate, especially around each other.
+described in a brief [paper][reynolds-99] he wrote in 1999 -- are modeled after
+the way that people or animals navigate, especially around each other.
 
 [Check them out!][demos]
 
@@ -20,11 +20,12 @@ moving graphic, or user interface to the next level. Steering behaviors, in
 particular, are essential to any game where characters move on their own (either
 in response to the player or other autonomous characters in the game).
 
-As seen in the paper above, the ideas behind steering behaviors have been around
-for over 25 years, and it's possible to find open-source implementations of them
-on the internet. However, the code -- and the explanations around them -- are
-pretty outdated, having been written in an age where Java and C++ were
-prevalent. These days, browsers can do a lot of things thanks to JavaScript.
+The ideas behind steering behaviors have been around for over 25 years, and it's
+possible to find open-source implementations of them on the internet. However,
+the code -- and the explanations around them -- are pretty outdated, having been
+written in an age where Java and C++ were prevalent. These days, browsers are
+able to do a lot of things natively, and JavaScript has become the lingua franca
+of the Internet.
 
 With this in mind, I wanted to learn the magic behind these behaviors and to
 bring them to life in a way that anyone could access them.
@@ -80,8 +81,3 @@ techniques on display here will eventually include the following behaviors:
 
 All code here is copyright (c) 2017 Elliot Winkler under the
 [MIT license](LICENSE).
-
-Portions of this code copied from [pixi-seed] and are copyright (c) 2015 Edwin
-Webb under the [MIT license](LICENSE).
-
-[pixi-seed]: https://github.com/edwinwebb/pixi-seed
