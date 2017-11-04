@@ -1,25 +1,31 @@
 import Renderer from "./Renderer";
+import Dimensions from "./Dimensions";
 import Triangle from "./objects/Triangle";
 
 export default class Application {
-  constructor({ width, height }) {
+  private renderer: Renderer;
+  public view: HTMLCanvasElement;
+  public width: number;
+  public height: number;
+
+  constructor({ width, height }: Dimensions) {
     this.renderer = new Renderer({ width, height });
     this.view = this.renderer.view;
     this.width = this.renderer.width;
     this.height = this.renderer.height;
 
-    this._addRenderables();
+    this.addRenderables();
   }
 
-  start() {
+  public start(): void {
     this.renderer.start();
   }
 
-  stop() {
+  public stop(): void {
     this.renderer.stop();
   }
 
-  _addRenderables() {
+  private addRenderables() {
     this.renderer.addRenderable(new Triangle(this));
   }
 }

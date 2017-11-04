@@ -31,17 +31,17 @@ module.exports = {
   context: path.join(__dirname, "app"),
   devtool: determineDevtool(),
   entry: {
-    app: "./index.js"
+    app: "./index.ts"
   },
   resolve: {
-    extensions: [".js", ".json", ".ts"]
+    extensions: [".ts", ".js"]
   },
   module: {
     rules: [
       {
         test: /\.ts$/,
         exclude: /node_modules/,
-        use: "ts-loader"
+        use: ["babel-loader", "ts-loader"]
       },
       {
         test: /\.js$/,

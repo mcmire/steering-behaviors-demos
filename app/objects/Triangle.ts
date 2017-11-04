@@ -1,10 +1,10 @@
 import { Graphics, Point } from "pixi.js";
+import Application from "../Application";
+import Clock from "../Clock";
 
 export default class Triangle extends Graphics {
-  constructor(app) {
+  constructor(private app: Application) {
     super();
-
-    this.app = app;
 
     this
       .beginFill(0xFFFFFF)
@@ -19,7 +19,8 @@ export default class Triangle extends Graphics {
     this.scale = new Point(8, 8);
   }
 
-  update({ deltaTime }) {
-    this.position.x = (this.position.x + 200 * deltaTime) % this.app.width;
+  update(clock: Clock): void {
+    this.position.x =
+      (this.position.x + 200 * clock.deltaTime) % this.app.width;
   }
 }

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "ES2015",
+    "sourceMap": true,
+    "target": "es2017",
+    "lib": ["DOM", "DOM.Iterable", "ES2017", "ScriptHost"],
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "pretty": true,
+    "removeComments": true,
+    "strict": true
+  }
+}
