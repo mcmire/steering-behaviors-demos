@@ -1,33 +1,25 @@
 import { Graphics, Point } from "pixi.js";
 
 export default class Triangle extends Graphics {
-  constructor() {
+  constructor(app) {
     super();
 
-    //this
-      //.beginFill(0xFFFFFF)
-        //.moveTo(0, 0)
-        //.lineTo(4, -2)
-        //.lineTo(4, 2)
-        //.lineTo(0, 0)
-      //.endFill();
+    this.app = app;
 
-    //this.position = new Point(100, 100);
-    //this.scale = new Point(10, 10);
+    this
+      .beginFill(0xFFFFFF)
+        .moveTo(0, 0)
+        .lineTo(-4, -1.5)
+        .lineTo(-3, 0)
+        .lineTo(-4, 1.5)
+        .lineTo(0, 0)
+      .endFill();
 
-    this.beginFill(0xFF3300);
-    this.lineStyle(4, 0xffd900, 1);
-
-    this.moveTo(0, 0);
-    this.lineTo(100, 0);
-    this.lineTo(100, 100);
-    this.lineTo(0, 100);
-    this.lineTo(0, 0);
-    this.endFill();
+    this.position = new Point(100, 100);
+    this.scale = new Point(8, 8);
   }
 
-  update({ elapsedTime }) {
-    this.position.x = 50 + 40 * Math.sin(elapsedTime * 2);
-    this.position.y = 50 + 40 * Math.cos(elapsedTime * 2);
+  update({ deltaTime }) {
+    this.position.x = (this.position.x + 200 * deltaTime) % this.app.width;
   }
 }

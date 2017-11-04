@@ -5,6 +5,8 @@ export default class Application {
   constructor({ width, height }) {
     this.renderer = new Renderer({ width, height });
     this.view = this.renderer.view;
+    this.width = this.renderer.width;
+    this.height = this.renderer.height;
 
     this._addRenderables();
   }
@@ -18,6 +20,6 @@ export default class Application {
   }
 
   _addRenderables() {
-    this.renderer.addRenderable(new Triangle());
+    this.renderer.addRenderable(new Triangle(this));
   }
 }
